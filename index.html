@@ -237,11 +237,7 @@
             position: 'topright'
         };
 
-        var map = L.map('map', {
-            center: [3.5134210456400448, -73.30078125000001],
-            layers: [OSM],
-            zoom: 5
-        });
+        
 
         var markers_Cluster = L.markerClusterGroup();
 
@@ -279,6 +275,12 @@
         ];
 
         markers.addLayer(ciud);
+
+        var map = L.map('map', {
+                center: [3.5134210456400448, -73.30078125000001],
+                layers: [OSM, markers],
+                zoom: 5
+            });
 
         //loading the geojson using a js variable
         var control = L.Control.styledLayerControl(baseMaps, overlays, options);
